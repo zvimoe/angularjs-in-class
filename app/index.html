@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="bookstore">
+    <head>
+         <script src="../node_modules/angular/angular.min.js"></script>
+         <script src="index.js"></script>
+         <link rel="stylesheet" href="index.css">
+         
+    </head>
+    <body>
+        
+        <div ng-controller="book1">
+
+            <div ng-repeat=" v in bookarray">
+                {{v.name}}
+                <img src = {{v.img}} >
+            </div>
+           
+        </div>
+       
+        
+
+    </body>
+</html>

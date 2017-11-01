@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-in-class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"http-server ./ -p 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zvimoe/angularjs-in-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zvimoe/angularjs-in-class/issues"
+  },
+  "homepage": "https://github.com/zvimoe/angularjs-in-class#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
