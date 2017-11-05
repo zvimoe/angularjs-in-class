@@ -2,20 +2,42 @@
 <html ng-app="bookstore">
     <head>
          <script src="../node_modules/angular/angular.min.js"></script>
+         <script hr="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
          <script src="index.js"></script>
          <link rel="stylesheet" href="index.css">
+
          
     </head>
     <body>
         
         <div ng-controller="book1">
 
-            <div ng-repeat=" v in bookarray">
+            <div ng-repeat=" v in bookarray" class="col-lg-4">
                 {{v.name}}
-                <img src = {{v.img}} >
+               
+                <img width={{v.img.width}} ng-src ={{v.img.img}} >
+                
+                <button ng-click="add(v.isbn)">add to shopping cart</button>
+                
             </div>
            
         </div>
+        <hr>
+        <div ng-controller="showCart">
+            <button ng-click="showCart()">showCart</button>
+            {{isbns}}
+        </div>
+        <div ng-controller="placeOrder">
+            name: {{user.firstname}}
+            <br>
+            lastname: {{user.lastname}}
+            <br>
+            <input placeholder="firstname" type="text" ng-model="user.firstname">
+            <input placeholder="lastname" type="text" ng-model="user.lastname">
+            <button ng-click="order()">place order</button>
+        </div>
+        
        
         
 
