@@ -1,3 +1,4 @@
+'use strict'
 var bookstore = angular.module("bookstore", []);
 bookstore.service('serviceComp' , function(){
     this.cart=[]
@@ -17,6 +18,56 @@ bookstore.service('orderservice' , function(){
     
 
 })
+bookstore.filter('nameToUpper',function(){
+
+     function stringToUpper(string){
+          let a = string.toUpperCase()
+          return a;
+     }
+    
+
+       return function(input){
+           for(let i=0; i<input.length; i++){
+               input[i].name = stringToUpper(input[i].name)
+           }
+           return input
+
+       }
+})
+bookstore.filter('bestseller',function(){
+    
+       
+        
+    
+           return function(input,isbn){
+
+            for(let i=0; i<input.length; i++){
+                  if (input[i].isbn == isbn) {
+                      input[i].note='best seller'
+                  }
+               }
+               return input
+    
+           }
+    })
+    bookstore.filter('changeImgSize',function(){
+        
+           
+            
+        
+               return function(input,isbn){
+    
+                for(let i=0; i<input.length; i++){
+                      if (input[i].isbn == isbn) {
+                          input[i].img.width = '176';
+                          input[i].img.height = '176';
+                      }
+                   }
+                   return input
+        
+               }
+        })
+
 
 
 
@@ -31,8 +82,9 @@ bookstore.controller('book1', function ($scope,serviceComp) {
     function book(name, img ,isbn) {
         this.name = name;
         this.img = { img:img,
-                     width:'500px' }
-        this.isbn = isbn 
+                     }
+        this.isbn = isbn, 
+        this.note;
         
     }
     $scope.add =function(isbn){
