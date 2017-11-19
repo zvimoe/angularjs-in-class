@@ -1,0 +1,11 @@
+<div ng-controller="book1" >
+    <input placeholder="search" ng-model="search">
+    <hr>
+   <div ng-repeat=" v in bookarray | nameToUpper | bestseller:123" class="col-lg-3">
+       {{v.name}} 
+      
+       <img width={{v.img.width}} height={{v.img.height}} ng-src ={{v.img.img}} >
+       
+       <button ng-click="add(v.isbn)">add to shopping cart {{v.note}}</button>
+        
+   </div>

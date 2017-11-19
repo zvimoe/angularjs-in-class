@@ -5,3 +5,7 @@ img {
 button {
   text-align: auto;
 }
+a {
+  border-right: solid 1px;
+  margin-right: 5%;
+}

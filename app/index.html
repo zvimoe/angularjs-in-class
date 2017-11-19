@@ -2,7 +2,7 @@
 <html ng-app="bookstore">
     <head>
          <script src="../node_modules/angular/angular.min.js"></script>
-         <script hr="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+         <script src="../node_modules/angular-route/angular-route.min.js"></script>
          <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
          <script src="index.js"></script>
          <link rel="stylesheet" href="index.css">
@@ -10,37 +10,12 @@
          
     </head>
     <body>
-        
-        <div ng-controller="book1" >
-             <input placeholder="search" ng-model="search">
-             <hr>
-            <div ng-repeat=" v in bookarray | nameToUpper | bestseller:123" class="col-lg-3">
-                {{v.name}} 
-               
-                <img width={{v.img.width}} height={{v.img.height}} ng-src ={{v.img.img}} >
-                
-                <button ng-click="add(v.isbn)">add to shopping cart this {{v.note}}</button>
-                 
-            </div>
-           
-        </div>
-        <hr>
-        <div ng-controller="showCart">
-            <button ng-click="showCart()">showCart</button>
-            {{isbns}}
-        </div>
-        <div ng-controller="placeOrder">
-            name: {{user.firstname}}
-            <br>
-            lastname: {{user.lastname}}
-            <br>
-            <input placeholder="firstname" type="text" ng-model="user.firstname">
-            <input placeholder="lastname" type="text" ng-model="user.lastname">
-            <button ng-click="order()">place order</button>
-        </div>
-        
-       
-        
-
+        <nav>
+            <a href="#!order" >order</a>
+            <a href="#!showcart ">shopping cart</a>
+            <a href="#!contact ">contact me!</a>
+            <a href="#!books">back to home </a>
+        </nav>
+        <div ng-view></div>
     </body>
 </html>

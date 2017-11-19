@@ -1,0 +1,9 @@
+<div ng-controller="placeOrder">
+    name: {{user.firstname}}
+    <br>
+    lastname: {{user.lastname}}
+    <br>
+    <input placeholder="firstname" type="text" ng-model="user.firstname">
+    <input placeholder="lastname" type="text" ng-model="user.lastname">
+    <button ng-click="order()">place order</button>
+</div>

@@ -1,5 +1,24 @@
 'use strict'
-var bookstore = angular.module("bookstore", []);
+var bookstore = angular.module("bookstore", ["ngRoute"]);
+bookstore.config(function($routeProvider){
+    $routeProvider
+    .when("/",{
+         templateUrl :"books.html"
+    })
+    .when("/order",{
+        templateUrl :"order.html"
+   })
+   .when("/showcart",{
+    templateUrl :"showcart.html"
+   })
+   .when("/contact",{
+    templateUrl :"contact.html"
+})
+.when("/books",{
+    templateUrl :"books.html"
+})
+
+})
 bookstore.service('serviceComp' , function(){
     this.cart=[]
     this.add=function(x){
@@ -12,7 +31,7 @@ bookstore.service('serviceComp' , function(){
 })
 bookstore.service('orderservice' , function(){
     this.placeorder=function(user,books){
-        console.log(user);
+        console.log(user); 
         console.log(books)
     }
     
@@ -105,5 +124,17 @@ bookstore.controller('placeOrder',function($scope,serviceComp,orderservice){
     $scope.order=function(){
         orderservice.placeorder($scope.user,serviceComp.getItemsCart())
     }
+})
+bookstore.controller('contact',function($scope){
+    $scope.contact = {
+        tel : "0533153255",
+        address:"havkook 39/16 beit shemesh israel 9913900",
+        email : "zsondhelm@gmial.com"
+
+    }
+       
+    
+  
+  
 })
 
